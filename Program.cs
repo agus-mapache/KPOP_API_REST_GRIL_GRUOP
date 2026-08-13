@@ -1,0 +1,25 @@
+using KpopApi.Endpoints;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
+
+app.UseDefaultFiles();
+
+app.UseStaticFiles();
+
+app.MapGroupEndpoints();
+app.MapArtistEndpoints();
+
+app.Run();

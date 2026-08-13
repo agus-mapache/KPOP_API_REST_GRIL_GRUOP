@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-pop API  Girl Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <style>
+        body {
+            background-color: #fff0f3; /* Rosa pastel muy suave de fondo */
+            color: #4a4a4a;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .header-section {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #ffffff;
+            border-bottom: 3px solid #ffccd5;
+            margin-bottom: 40px;
+        }
+
+        .header-title {
+            font-weight: 700;
+            color: #db7093;
+            letter-spacing: -1px;
+            font-size: 3rem;
+        }
+        .item-card {
+            background-color: #ffffff;
+            border: 1px solid #ffb3c6;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            height: 160px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px rgba(255, 182, 193, 0.15);
+        }
+
+        .item-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(219, 112, 147, 0.25);
+        }
+
+        /* Contenedor de la foto */
+        .item-img-container {
+            width: 140px;
+            min-width: 140px;
+            background-color: #ffe5ec;
+            position: relative;
+        }
+
+        .item-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-title a {
+            color: #c71585;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15rem;
+        }
+
+        .card-title a:hover {
+            text-decoration: underline;
+            color: #db7093;
+        }
+
+        .text-label {
+            font-size: 0.75rem;
+            color: #888888;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0px;
+        }
+
+        .text-value {
+            font-size: 0.9rem;
+            color: #555555;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .section-heading {
+            color: #c71585;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-left: 5px;
+            border-left: 5px solid #ffb3c6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <div class="header-section shadow-sm">
+        <div class="container">
+            <h1 class="header-title">K-POP DATABASE API</h1>
+            <p class="text-muted mt-2">Explora los grupos y artistas del multiverso en formato JSON</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        
+        <!-- SECCIÓN 1: GRUPOS -->
+        <h3 class="section-heading">GRUPOS</h3>
+        <div id="groups-container" class="row g-4 mb-5">
+        </div>
+
+        <!-- SECCIÓN 2: ARTISTAS INDIVIDUALES -->
+        <h3 class="section-heading">ARTISTAS</h3>
+        <div id="artists-container" class="row g-4">
+        </div>
+
+    </div>
+
+     <!-- lo ultimo -->
+    <div class="header-section shadow-sm">
+        <div class="container">
+            <p>
+                <a href="https://www.linkedin.com/in/agustina-barbaresi" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16" style="vertical-align: -0.125em;">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                    </svg> 
+                    Agustina Barbaresi
+                </a>
+            </p>
+            <p>
+                <a href="https://www.github.com/agus-mapache" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                    </svg>
+                    Agustina Barbaresi
+                </a>
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Script de carga -->
+    <script>
+        async function loadData() {
+            try {
+                const [groupsRes, artistsRes] = await Promise.all([
+                    fetch('/api/groups'),
+                    fetch('/api/artists')
+                ]);
+
+                const groups = await groupsRes.json();
+                const artists = await artistsRes.json();
+
+                // Renderizar Grupos
+                const groupsContainer = document.getElementById('groups-container');
+                groupsContainer.innerHTML = '';
+                
+                groups.forEach(group => {
+                    const groupImage = group.imageUrl ? group.imageUrl : 'https://via.placeholder.com/140x160/ffb3c6/ffffff?text=Grupo';
+
+                    groupsContainer.innerHTML += `
+                        <div class="col-md-6 col-lg-4">
+                            <div class="item-card">
+                                <!-- AQUÍ VA LA FOTO DEL GRUPO -->
+                                <div class="item-img-container">
+                                    <img src="${groupImage}" alt="${group.name}">
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="card-title mb-1">
+                                        <!-- Al hacer clic lleva al JSON del grupo -->
+                                        <a href="/api/groups/${group.id}" target="_blank">${group.name}</a>
+                                    </h4>
+                                    <p class="text-label">Agencia</p>
+                                    <p class="text-value">${group.agency}</p>
+                                    <span class="badge bg-light text-dark border border-secondary align-self-start" style="font-size: 0.7rem;">ID: ${group.id}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // Renderizar Artistas Individuales
+                const artistsContainer = document.getElementById('artists-container');
+                artistsContainer.innerHTML = '';
+
+                artists.forEach(artist => {
+                    const artistImage = artist.imageUrl ? artist.imageUrl : 'https://via.placeholder.com/140x160/ffe5ec/c71585?text=Artist';
+
+                    artistsContainer.innerHTML += `
+                        <div class="col-md-6 col-lg-4">
+                            <div class="item-card">
+                                <!-- AQUÍ VA LA FOTO DEL ARTISTA -->
+                                <div class="item-img-container">
+                                    <img src="${artistImage}" alt="${artist.name}">
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="card-title mb-1">
+                                        <!-- Al hacer clic lleva al JSON individual del artista -->
+                                        <a href="/api/artists/${artist.id}" target="_blank">${artist.name}</a>
+                                    </h4>
+                                    <p class="text-label">Rol / Posición</p>
+                                    <p class="text-value">${artist.role}</p>
+                                    <span class="badge bg-light text-dark border border-secondary align-self-start" style="font-size: 0.7rem;">Grupo ID: ${artist.groupId}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+            } catch (error) {
+                console.error("Error al cargar los datos:", error);
+            }
+        }
+
+        loadData();
+    </script>
+
+</body>
+</html>

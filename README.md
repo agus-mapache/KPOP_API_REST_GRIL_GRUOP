@@ -41,6 +41,4 @@ Una aplicación web interactiva que actúa como una base de datos multiverso par
 
 4. **Ejecución:**
    ```bash
-   dotnet run
-
-   *Personalización:* Si cambias el nombre del proyecto o añades nuevas funcionalidades, no olvides actualizar la sección de "Características".
+   dotnet run 

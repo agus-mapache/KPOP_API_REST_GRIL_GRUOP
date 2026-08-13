@@ -135,3 +135,6 @@ UPDATE Artists SET ImageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:A
 UPDATE Artists SET ImageUrl = 'https://preview.redd.it/are-there-any-updates-on-moka-v0-tpht1eanzowf1.jpeg?auto=webp&s=e9cb1613078635750d1b66c83370ef38a0adadfc' WHERE Name = 'Moka' AND GroupId = 6;
 UPDATE Artists SET ImageUrl = 'https://i.pinimg.com/736x/33/8d/b0/338db03179ddce491c7441a3a6a834f9.jpg' WHERE Name = 'Wonhee' AND GroupId = 6;
 UPDATE Artists SET ImageUrl = 'https://static.wikia.nocookie.net/illit/images/6/65/I_Got_Your_Back_Concept_Photo_%28FRUiTS_Ver.%29_Iroha_%284%29.jpg/revision/latest?cb=20260715131047' WHERE Name = 'Iroha' AND GroupId = 6;
+
+
+SHOW TABLES;

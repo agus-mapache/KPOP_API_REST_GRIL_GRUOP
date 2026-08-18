@@ -1,6 +1,6 @@
 # K-Pop GIRL GROUP 
 
-Una aplicación web interactiva que actúa como una base de datos multiverso para grupos y artistas de K-Pop. Esta aplicación permite explorar información detallada, roles y membresías de grupos a través de una interfaz moderna y minimalista con estética inspirada en "Rick and Morty".
+Una aplicación web interactiva que actúa como una base de datos multiverso para grupos y artistas de K-Pop. Esta aplicación permite explorar información detallada, roles y membresías de grupos a través de una interfaz moderna y minimalista.
 
 ## Características
 - **API RESTful:** Construida con C# y .NET (Minimal APIs) para una respuesta ultra rápida.

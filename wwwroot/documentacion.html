@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación API GIRL GROUP</title>
+    <style>
+        /* Paleta de colores */
+        :root {
+            --bg-blanco: #ffffff;
+            --bg-rosa-muy-claro: #fff0f3; /* Fondo de sidebar y header */
+            --bg-codigo: #ffe4e8; /* Fondo de bloques de código */
+            --rosa-acento: #ffb3c6; /* Botones y detalles */
+            --rosa-alerta: #ffc2d1; /* Caja de información */
+            --texto-principal: #4a4a4a;
+            --texto-titulos: #333333;
+            --texto-enlaces: #e5989b;
+            --borde-rosa: #ffccd5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--texto-principal);
+            background-color: var(--bg-blanco);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            background-color: var(--bg-rosa-muy-claro);
+            border-bottom: 1px solid var(--borde-rosa);
+        }
+
+        :root {
+    --color-principal: #d86c8d;
+}
+
+    /* Estilos del Logo */
+    .header-left .logo a {
+        font-weight: 800;
+        font-size: 2rem; 
+        color: var(--color-principal);
+        text-decoration: none; 
+        letter-spacing: -0.5px;
+    }
+
+    /* Estilos de los Botones */
+    .header-right .btn-custom {
+        background-color: var(--color-principal);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        border-radius: 25px; 
+        padding: 8px 22px;
+        border: none;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    .header-right .btn-custom:hover {
+        background-color: #c45878;
+        color: #ffffff;
+    }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .header-right a {
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-weight: 500;
+        }
+        
+        .header-right a.active {
+            color: var(--texto-enlaces);
+        }
+        /* --- Layout Principal --- */
+        .contenedor-principal {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* --- Sidebar --- */
+        aside {
+            width: 260px;
+            background-color: var(--bg-rosa-muy-claro);
+            border-right: 1px solid var(--borde-rosa);
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        aside h3 {
+            font-size: 1rem;
+            color: var(--texto-titulos);
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        aside h3:first-child {
+            margin-top: 0;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        aside ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        aside ul li a {
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        aside ul li a:hover {
+            color: var(--texto-enlaces);
+        }
+
+        /* --- Contenido --- */
+        main {
+            flex: 1;
+            padding: 3rem 5rem;
+            overflow-y: auto;
+        }
+
+        .contenido-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--texto-titulos);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--texto-titulos);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--texto-enlaces);
+            text-decoration: underline;
+        }
+
+        /* --- Bloques de Código --- */
+        pre {
+            background-color: var(--bg-codigo);
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--borde-rosa);
+            margin-bottom: 1.5rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .code-keyword { color: #d63384; }
+        .code-string { color: #20c997; }
+        .code-number { color: #0dcaf0; }
+
+        /* --- Caja de Información --- */
+        .info-box {
+            background-color: var(--rosa-alerta);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: #85334c;
+        }
+
+        /* --- Tablas (Esquemas) --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--borde-rosa);
+        }
+
+        th {
+            font-weight: bold;
+            color: var(--texto-titulos);
+            font-size: 0.95rem;
+        }
+
+        td {
+            font-size: 0.9rem;
+            color: var(--texto-principal);
+        }
+
+        td:first-child {
+            font-weight: 500;
+            color: var(--texto-titulos);
+        }
+        p code {
+            background-color: var(--bg-codigo);
+            color: var(--texto-titulos);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            border: 1px solid var(--borde-rosa);
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="d-flex justify-content-between align-items-center px-4 py-3">
+        <div class="header-left">
+            <div class="logo">
+                <a href="index.html">API GIRL GROUP</a>
+            </div>
+        </div>
+
+        <div class="header-right d-flex gap-3 align-items-center">
+            <a href="documentacion.html" class="btn btn-custom">Documentacion</a>
+            <a href="acercade.html" class="btn btn-custom">Acerca de</a>
+        </div>
+    </header>
+
+    <div class="contenedor-principal">
+        <aside>
+            <h3>Introducción</h3>
+            
+            <ul>
+                <li><a href="#rest">REST</a></li>
+            </ul>
+
+            <h3>Grupos</h3>
+            <ul>
+                <li><a href="#schema-grupos">Esquema de grupos</a></li>
+                <li><a href="#obtener-todos-los-grupos">Obtener todos los grupos</a></li>
+                <li><a href="#obtener-un-solo-grupo">Obtener un solo grupo</a></li>
+            </ul>
+
+            <h3>Artistas</h3>
+            <ul>
+                <li><a href="#schema-artistas">Esquema de artistas</a></li>
+                <li><a href="#obtener-todos-los-artistas">Obtener todos los artistas</a></li>
+                <li><a href="#obtener-un-solo-artista">Obtener un solo artista</a></li>
+            </ul>
+            <h3>Bibliotecas</h3>
+            <ul>
+                <li><a href="#bibliotecas">Bibliotecas</a></li>
+
+            </ul>
+        </aside>
+
+        <main>
+            <div class="contenido-wrapper">
+                <h1>Documentación</h1>
+
+                <h2 id="introduccion">Introducción</h2>
+                <p>Esta documentación te ayudará a familiarizarte con los recursos de la API KPOP GIRL GROUP y te mostrará cómo realizar diferentes consultas para que puedas aprender de una manera mas divertida con tus Idols femeninas favoritas.</p>
+
+                <h2 id="rest">REST</h2>
+                <p>URL Base: <a href="https://kpopapirestgrilgruop-production.up.railway.app/api">https://kpopapirestgrilgruop-production.up.railway.app/api</a></p>
+                <p>La URL Base y Artistas contiene información sobre todos los Grupos de  la API disponibles. Todas las solicitudes son <code>GET</code> y devuelven datos en <code>json</code>.</p>
+
+                <pre>
+                    <span class="code-keyword" style="font-weight: bold;">GET</span> https://kpopapirestgrilgruop-production.up.railway.app/api
+                    [
+                        {
+                            <span class="code-keyword">"Grupo"</span>: <span class="code-number">"https://kpopapirestgrilgruop-production.up.railway.app/api/groups"</span>,
+                            <span class="code-keyword">"Artistas"</span>: <span class="code-string">"https://kpopapirestgrilgruop-production.up.railway.app/api/artists"</span>
+                        }
+                    ]
+                </pre>
+
+                <h2 id="grupos">Grupos</h2>
+                <h3 id="schema-grupos">Schema Grupos</h3>
+                <p>Hay un total de 4 grupos en la API.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Llave</th>
+                            <th>Tipo</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>entero</td>
+                            <td>La identificación única del grupo en la base de datos.</td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td>cadena</td>
+                            <td>El nombre del grupo (ej. IVE, BLACKPINK, TWICE).</td>
+                        </tr>
+                        <tr>
+                            <td>agency</td>
+                            <td>cadena</td>
+                            <td>La agencia de entretenimiento a la que pertenece el grupo.</td>
+                        </tr>
+                        <tr>
+                            <td>imageUrl</td>
+                            <td>cadena (url)</td>
+                            <td>Enlace a la imagen representativa del grupo. Todas las imágenes son URLs externas que apuntan a la fotografía oficial.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 id="obtener-todos-los-grupos">Obtener todos los grupos</h3>
+                <p>Puedes acceder a la lista de todos los grupos utilizando <code>/api/groups</code></p>
+                <pre>
+                    <span class="code-keyword" style="font-weight: bold;">GET</span> https://kpopapirestgrilgruop-production.up.railway.app/api/groups
+                    [
+                        {
+                            <span class="code-keyword">"id"</span>: <span class="code-number">1</span>,
+                            <span class="code-keyword">"name"</span>: <span class="code-string">"IVE"</span>,
+                            <span class="code-keyword">"agency"</span>: <span class="code-string">"Starship Entertainment"</span>,
+                            <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQq-ChYZrGpoE1sj4I4HzPsZdICLW3QPjPs5JlI0SbE3NTAIAwuDE0Vos&s=10"</span>
+                        },
+                        {
+                            <span class="code-keyword">"id"</span>: <span class="code-number">2</span>,
+                            <span class="code-keyword">"name"</span>: <span class="code-string">"BLACKPINK"</span>,
+                            <span class="code-keyword">"agency"</span>: <span class="code-string">"YG Entertainment"</span>,
+                            <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-BVd6ZLCqskt7JGR9Ozs1RJLNMX0upwXRO9OOtRY5B_1zpjB9ajrEQwv0&s=10"</span>
+                        },
+                        {
+                            <span class="code-keyword">"id"</span>: <span class="code-number">3</span>,
+                            <span class="code-keyword">"name"</span>: <span class="code-string">"TWICE"</span>,
+                            <span class="code-keyword">"agency"</span>: <span class="code-string">"JYP Entertainment"</span>,
+                            <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://i.scdn.co/image/ab6761610000e5eb3d8820046fd455b38d644864"</span>
+                        },
+                        {
+                            <span class="code-keyword">"id"</span>: <span class="code-number">4</span>,
+                            <span class="code-keyword">"name"</span>: <span class="code-string">"aespa"</span>,
+                            <span class="code-keyword">"agency"</span>: <span class="code-string">"SM Entertainment"</span>,
+                            <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdvAzh5y5Qntyc1pA1D-CQWI-k9t9zsDFxym_Wt--JHiTStOAZDGsq8Oud&s=10"</span>
+                        },
+                        {
+                            <span class="code-keyword">"id"</span>: <span class="code-number">5</span>,
+                            <span class="code-keyword">"name"</span>: <span class="code-string">"Red Velvet"</span>,
+                            <span class="code-keyword">"agency"</span>: <span class="code-string">"SM Entertainment"</span>,
+                            <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://i.scdn.co/image/ab6761610000e5eb02a562ea6b1dc718394010ac"</span>
+                        },
+                        {
+                            <span class="code-keyword">"id"</span>: <span class="code-number">6</span>,
+                            <span class="code-keyword">"name"</span>: <span class="code-string">"ILLIT"</span>,
+                            <span class="code-keyword">"agency"</span>: <span class="code-string">"BELIFT LAB"</span>,
+                            <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://akamai.sscdn.co/uploadfile/letras/fotos/1/2/b/6/12b617258cf173c1974f004b0c007651.jpg"</span>
+                        }
+                    ]
+                </pre>
+
+                <h3 id="obtener-un-solo-grupo">Obtener un solo grupo</h3>
+                <p>Puedes acceder a un solo grupo utilizando utilizando por ejemplo: <code>/api/group/1</code></p>
+                <pre>
+                    <span class="code-keyword" style="font-weight: bold;">GET</span> https://kpopapirestgrilgruop-production.up.railway.app/api/group/1
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"IVE"</span>,
+                        <span class="code-keyword">"agency"</span>: <span class="code-string">"Starship Entertainment"</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQq-ChYZrGpoE1sj4I4HzPsZdICLW3QPjPs5JlI0SbE3NTAIAwuDE0Vos&s=10"</span>
+                    }
+                </pre>
+
+                <h2 id="artistas">Artistas</h2>
+                <h3 id="schema-artistas">Schema Artistas</h3>
+                <p>Hay un total de 33 artistas en la API.</p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Llave</th>
+                        <th>Tipo</th>
+                        <th>Descripción</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>id</td>
+                        <td>entero</td>
+                        <td>La identificación única de la integrante en la base de datos.</td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>cadena</td>
+                        <td>El nombre artístico de la integrante (ej. Yujin, Jennie, Nayeon).</td>
+                    </tr>
+                    <tr>
+                        <td>role</td>
+                        <td>cadena</td>
+                        <td>El rol o posición de la integrante dentro del grupo (ej. Líder / Vocalista, Rapera Principal).</td>
+                    </tr>
+                    <tr>
+                        <td>groupId</td>
+                        <td>entero</td>
+                        <td>El identificador único del grupo al que pertenece la integrante (clave foránea que conecta con la tabla de grupos).</td>
+                    </tr>
+                    <tr>
+                        <td>imageUrl</td>
+                        <td>cadena (url)</td>
+                        <td>Enlace a la imagen representativa de la integrante. Todas las imágenes son URLs externas que apuntan a la fotografía oficial.</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h3 id="obtener-todos-los-artistas">Obtener todos los artistas</h3>
+                <p>Puedes acceder a la lista de todos los artistas utilizando <code>/api/artists</code></p>
+                <pre>
+                    <span class="code-keyword" style="font-weight: bold;">GET</span> https://kpopapirestgrilgruop-production.up.railway.app/api/artists
+                [
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Yujin"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Líder / Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/8/88/An_Yu-jin_at_the_2024_Melon_Music_Awards.png"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">2</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Gaeul"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Rapera / Bailarina"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/9/90/Gaeul_of_Ive_at_Senka_Pop-up_Event%2C_May_19%2C_2026_%281%29.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Rei"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Rapera / Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/8/8f/Ive%27s_Rei_%40_OPENING_PROJECTxSATUR_PhotoCall%2C_12_June_2025_01.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">4</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Wonyoung"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista / Visual"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/3/37/Jang_Won-young_at_the_Dyson_Launch_Event%2C_April_23%2C_2026_%284%29.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">5</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Liz"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista Principal"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://static.wikia.nocookie.net/ive/images/0/00/IVE_Liz_Revive%2B_concept_photo_26.png/revision/latest/scale-to-width-down/1200?cb=20260208211432"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">6</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Leeseo"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Maknae / Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYdCmST7w6mlrJM8IDaost9hlao-kKyvm7u7OvEZXHTSyGgmH8D98YXKKc&s=10"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">7</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Jisoo"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista / Visual"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">2</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/2/2e/Jisoo_at_Boyfriend_on_Demand_press_conference_on_26022026_%2812%29.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">8</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Jennie"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Rapera Principal / Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">2</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Kim_Jennie_%28%EA%B9%80%EC%A0%9C%EB%8B%88%29_05.jpg/250px-Kim_Jennie_%28%EA%B9%80%EC%A0%9C%EB%8B%88%29_05.jpg"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">9</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Rosé"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista Principal / Bailarina"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">2</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/b/b3/Blackpink_Ros%C3%A9_Rimowa_1.jpg"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">10</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Lisa"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Bailarina Principal / Rapera"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">2</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/20240314_Lisa_Manoban_07.jpg/250px-20240314_Lisa_Manoban_07.jpg?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">11</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Nayeon"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista / Centro"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/7/72/Nayeon_251120_1.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">12</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Jeongyeon"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista Líder"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPM7dFSCBcAF3X5R7jnYt8Tx-JCVYIvXjt58KMQpICvL0mxOXwwB46MHxz&s=10"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">13</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Momo"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Bailarina Principal / Rapera"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/TWICE_MOMO_April_2024.jpg/960px-TWICE_MOMO_April_2024.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">14</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Sana"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista / Bailarina"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/9/9c/2025_Sana_Minatozaki_from_TWICE.jpg"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">15</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Jihyo"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Líder / Vocalista Principal"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/e/ee/TWICE_Jihyo_Fred_May_2024.jpg"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">16</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Mina"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Bailarina / Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Mina_Sharon_Myoui_%E5%90%8D%E4%BA%95_%E5%8D%97_2024_07.jpg/250px-Mina_Sharon_Myoui_%E5%90%8D%E4%BA%95_%E5%8D%97_2024_07.jpg"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">17</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Dahyun"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Rapera Principal"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/8/85/Dahyun_at_press_conference_for_You_Are_the_Apple_of_My_Eye_02_%28cropped%29.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">18</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Chaeyoung"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Rapera Principal / Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/5/5b/241204_Chaeyoung_at_Rokh_H%26M_%282%29.png"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">19</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Tzuyu"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Maknae / Visual"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">3</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/20240305_Chou_Tzuyu_%E5%91%A8%E5%AD%90%E7%91%9C_03.jpg/250px-20240305_Chou_Tzuyu_%E5%91%A8%E5%AD%90%E7%91%9C_03.jpg?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">20</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Karina"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Líder / Bailarina Principal"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">4</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Aespa%27s_Karina_5.jpg/250px-Aespa%27s_Karina_5.jpg?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">21</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Giselle"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Rapera Principal"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">4</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/6/65/Giselle_at_Incheon_Airport_on_March_4%2C_2026_02.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">22</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Winter"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista Principal / Bailarina"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">4</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://static.wikia.nocookie.net/drama/images/e/e2/Winter_%28SMTOWN%29_03.jpg/revision/latest/scale-to-width-down/250?cb=20250326214432&path-prefix=es"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">23</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Ningning"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista Principal / Maknae"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">4</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://i.mydramalist.com/3oZDKd_5f.jpg"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">24</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Irene"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Líder / Rapera / Bailarina"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">5</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://static.wikia.nocookie.net/kpop/images/9/9d/Irene_para_Cosmic_11.jpg/revision/latest?cb=20240618215705&path-prefix=es"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">25</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Seulgi"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Bailarina Principal / Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">5</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlfABTOCnVVh-vKlhsoWGmAmPxJJVSn-OHlNphGWktdbNTva2gamOETtQ&s=10"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">26</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Wendy"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista Principal"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">5</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6KdVVBUhhz1JDko_8jIrdQB8RZgohOb_OGyYvFqrrAw&s=10"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">27</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Joy"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista / Rapera"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">5</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://asianwiki.com/images/2/23/Joy_Red_Velvet-p2.jpg"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">28</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Yeri"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista / Bailarina / Maknae"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">5</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://static.wikia.nocookie.net/kpop/images/1/17/Yeri_para_Cosmic_12.jpg/revision/latest?cb=20240619014122&path-prefix=es"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">29</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Yunah"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Líder / Vocalista / Bailarina"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">6</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVs8vzEzji_ikDaZDC5nNRJ1TRBPL2KRsrAvZUP8Vte7o687tUnMrAvK0&s=10"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">30</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Minju"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista / Bailarina"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">6</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiUyQafsXcIXJrP-EJBHwSbeNvMvRpgv4TAJ3T520RxpMehz94hWoT38h7&s=10"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">31</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Moka"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Bailarina / Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">6</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://preview.redd.it/are-there-any-updates-on-moka-v0-tpht1eanzowf1.jpeg?auto=webp&s=e9cb1613078635750d1b66c83370ef38a0adadfc"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">32</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Wonhee"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">6</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://i.pinimg.com/736x/33/8d/b0/338db03179ddce491c7441a3a6a834f9.jpg"</span>
+                    },
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">33</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Iroha"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Bailarina Principal / Maknae"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">6</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://static.wikia.nocookie.net/illit/images/6/65/I_Got_Your_Back_Concept_Photo_%28FRUiTS_Ver.%29_Iroha_%284%29.jpg/revision/latest?cb=20260715131047"</span>
+                    }
+                ]
+                </pre>
+                <h3 id="obtener-un-solo-artista">Obtener un solo artista</h3>
+                <p>Puedes acceder a un solo artista utilizando utilizando por ejemplo: <code>/api/artists/1</code></p>
+                <pre>
+                    <span class="code-keyword" style="font-weight: bold;">GET</span> https://kpopapirestgrilgruop-production.up.railway.app/api/artists/1
+                    {
+                        <span class="code-keyword">"id"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"name"</span>: <span class="code-string">"Yujin"</span>,
+                        <span class="code-keyword">"role"</span>: <span class="code-string">"Líder / Vocalista"</span>,
+                        <span class="code-keyword">"groupId"</span>: <span class="code-number">1</span>,
+                        <span class="code-keyword">"imageUrl"</span>: <span class="code-string">"https://upload.wikimedia.org/wikipedia/commons/8/88/An_Yu-jin_at_the_2024_Melon_Music_Awards.png"</span>
+                    }
+                </pre>
+
+                <h2 id="bibliotecas">Bibliotecas</h2>
+                <p>Biblotecas que fueron utilizadas para crear esta API, puedes utilizar esta API con Postman o insomnia</p>
+                
+        </div>
+    </main>
+
+</body>
+</html>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KPOPAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb6df7593ac9b912f55f3c4aeb02056de5121fbd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae3ad682d0a94e8fb7381a11e118ac6fd816abb3")]
 [assembly: System.Reflection.AssemblyProductAttribute("KPOPAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KPOPAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

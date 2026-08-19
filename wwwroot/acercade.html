@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de API Girl Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <style>
+        
+      /* Paleta de colores */
+        :root {
+            --bg-blanco: #ffffff;
+            --bg-rosa-muy-claro: #fff0f3; /* Fondo de sidebar y header */
+            --bg-codigo: #ffe4e8; /* Fondo de bloques de código */
+            --rosa-acento: #ffb3c6; /* Botones y detalles */
+            --rosa-alerta: #ffc2d1; /* Caja de información */
+            --texto-principal: #4a4a4a;
+            --texto-titulos: #333333;
+            --texto-enlaces: #e5989b;
+            --borde-rosa: #ffccd5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--texto-principal);
+            background-color: var(--bg-blanco);
+
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            background-color: var(--bg-rosa-muy-claro);
+            border-bottom: 1px solid var(--borde-rosa);
+        }
+
+        :root {
+    --color-principal: #d86c8d;
+}
+
+    /* Estilos del Logo */
+    .header-left .logo a {
+        font-weight: 800;
+        font-size: 2rem; 
+        color: var(--color-principal);
+        text-decoration: none; 
+        letter-spacing: -0.5px;
+    }
+
+    /* Estilos de los Botones */
+    .header-right .btn-custom {
+        background-color: var(--color-principal);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        border-radius: 25px; 
+        padding: 8px 22px;
+        border: none;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    .header-right .btn-custom:hover {
+        background-color: #c45878;
+        color: #ffffff;
+    }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .header-right a {
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-weight: 500;
+        }
+        
+        .header-right a.active {
+            color: var(--texto-enlaces);
+        }
+        /* --- Layout Principal --- */
+        .contenedor-principal {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* --- Sidebar --- */
+        aside {
+            width: 260px;
+            background-color: var(--bg-rosa-muy-claro);
+            border-right: 1px solid var(--borde-rosa);
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        aside h3 {
+            font-size: 1rem;
+            color: var(--texto-titulos);
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        aside h3:first-child {
+            margin-top: 0;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        aside ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        aside ul li a {
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        aside ul li a:hover {
+            color: var(--texto-enlaces);
+        }
+
+        /* --- Contenido --- */
+        main {
+            flex: 1;
+            padding: 3rem 5rem;
+            overflow-y: auto;
+        }
+
+        .contenido-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--texto-titulos);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--texto-titulos);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--texto-enlaces);
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+     <header class="d-flex justify-content-between align-items-center px-4 py-3">
+        <div class="header-left">
+            <div class="logo">
+                <a href="index.html">API GIRL GROUP</a>
+            </div>
+        </div>
+
+        <div class="header-right d-flex gap-3 align-items-center">
+            <a href="documentacion.html" class="btn btn-custom">Documentacion</a>
+            <a href="acercade.html" class="btn btn-custom">Acerca de</a>
+        </div>
+    </header>
+    <div class="contenido-wrapper">
+        <h2>Acerca de la API K-POP Girl Group</h2>
+        <p>Esta es una API REST que proporciona información sobre grupos y miembros del K-POP. Es una herramienta útil para desarrolladores que quieren integrar datos de K-POP en sus aplicaciones.
+        </p>
+        <h2>Quien soy?</h2>
+        <p>Soy Agustina Barbaresi, una desarrolladora y analista de sistemas apasionada por el K-POP y el desarrollo backend y frontend. Esta API es el resultado de mi interés en combinar estas dos áreas y crear una herramienta útil para la comunidad de fans de K-POP.
+            <br>
+            Mi objetivo es seguir mejorando esta API y agregar más funcionalidades en el futuro, como la posibilidad de buscar por género, año de debut, y más, Si tienes añgun interes en colaborar o tienes sugerencias, no dudes en contactarme.
+        </p>
+        <h2>Porque hice esto?</h2>
+        <p>
+            Esta API fue creada con el objetivo de combinar las dos cosas que me apacionan el codigo y los grupos de KPOP, y de esta manera poder compartir mi conocimiento y pasión con otros desarrolladores y fans del K-POP. Espero que esta API sea útil para aquellos que quieran explorar y aprender más sobre el mundo del K-POP.
+        </p>
+        <h2>Aspectos técnicos</h2>
+        <p>Esta API fue construida con C# y .NET para una respuesta ultra rápida, tambien se utilizo Dapper y para la base de datos MySQL. Para acceso a Datos se realiza una consulta directa de grupos y artistas con visualización de imágenes y perfiles. 
+            Teniendo una integración con JSON para uan navegación directa a los endpoints de la API haciendo clic en los perfiles. </p>
+        <h2>Contacto</h2>
+        <p>Si deseas contactarme, puedes hacerlo a través de mi github: <a href="https://github.com/agus-mapache" target="_blank">https://github.com/agus-mapache</a> 
+            <br>
+            o tambien en mi lindkedin: <a href="www.linkedin.com/in/agustina-barbaresi" target="_blank">www.linkedin.com/in/agustina-barbaresi</a>
+        </p>
+</body>
+</html>
